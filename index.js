@@ -28,10 +28,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(router);
 app.get("/", (req, res) => {
-  res.send("Membuat API");
+  res.sendFile(process.cwd() + "/index.html");
 });
 
 // listening to port
-app.listen(8000, () => console.log("Server Running at port: 8000"));
+app.listen(process.env.PORT || 5000, () =>
+  console.log("Server Running at port: 8000")
+);
 
 //ahdhsashd
